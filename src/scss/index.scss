@@ -433,7 +433,8 @@
 	}
 
 	&__icon {
-		font-size: 70px;
+		width: 60px;
+		height: 60px;
 		color: var(--bs-color-one);
 		@include margin-bottom(6.25rem);
 	}

@@ -1,6 +1,8 @@
 import './scss/index.scss';
 import { Carousel } from 'bootstrap';
 
+// import '../node_modules/bootstrap/js/dist/carousel';
+
 import brandPath from './images/icons/brand.svg';
 import personPath from './images/icons/person.svg';
 import mailPath from './images/icons/mail.svg';
@@ -13,6 +15,11 @@ import schoolPath from './images/icons/school.svg';
 import rocketLaunchPath from './images/icons/rocket_launch.svg';
 import sentimentSatisfiedPath from './images/icons/sentiment_satisfied.svg';
 import attachMoneyPath from './images/icons/attach_money.svg';
+
+import headphonesPath from './images/icons/headphones.svg';
+import unlockPath from './images/icons/unlock.svg';
+import backupPath from './images/icons/backup.svg';
+import thumbPath from './images/icons/thumb.svg';
 
 import twitterIconPath from './images/icons/twitter.svg';
 import facebookIconPath from './images/icons/facebook.svg';
@@ -28,7 +35,6 @@ import clientPath2 from './images/Layer22.webp';
 import clientPath3 from './images/Layer25.webp';
 import clientPath4 from './images/Layer23.webp';
 
-
 brandIcon.src = brandPath;
 personIcon.src = personPath;
 personIconMap.src = personPath;
@@ -43,6 +49,11 @@ schoolIcon.src = schoolPath;
 rocketLaunchIcon.src = rocketLaunchPath;
 sentimentSatisfiedIcon.src = sentimentSatisfiedPath;
 attachMoneyIcon.src = attachMoneyPath;
+
+headphonesIcon.src = headphonesPath;
+unlockIcon.src = unlockPath;
+backupIcon.src = backupPath;
+thumbIcon.src = thumbPath;
 
 twitterIcon.src = twitterIconPath;
 facebookIcon.src = facebookIconPath;

@@ -13,7 +13,7 @@ module.exports = function() {
 					test: /\.svg$/,
 					type: 'asset/resource',
 					generator: {
-						filename: 'images/[name].[contenthash:8][ext]'
+						filename: 'images/icons/[name].[contenthash:8][ext]'
 					},
 					use: [{
 						loader: 'svgo-loader',
