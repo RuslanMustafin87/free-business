@@ -1,8 +1,6 @@
 import './scss/index.scss';
 import { Carousel } from 'bootstrap';
 
-// import '../node_modules/bootstrap/js/dist/carousel';
-
 import brandPath from './images/icons/brand.svg';
 import personPath from './images/icons/person.svg';
 import mailPath from './images/icons/mail.svg';
@@ -74,7 +72,6 @@ const buttonCloseNav = document.getElementById('buttonCloseNav');
 const navbarContent = document.getElementById('navbarContent');
 
 buttonOpenNav.onclick = function() {
-	console.log( 'k' );
 	navbarContent.classList.add('show-collapse');
 }
 
@@ -89,3 +86,20 @@ listNavLinks.forEach((item) => {
 		navbarContent.classList.remove('show-collapse');
 	})
 })
+// const invalid = new CustomEvent('myinvalid');
+inputFeedbackName.addEventListener('invalid', (event) => {
+
+	inputFeedbackName.setCustomValidity('Error');
+
+})
+
+formFeedback.addEventListener('submit', function(event) {
+
+	if(!this.checkValidity()) {
+		event.preventDefault();
+		console.log( 'ki' );
+		event.stopPropagation();
+
+	}
+	formFeedback.classList.add('was-validated');
+});

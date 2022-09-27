@@ -28,20 +28,20 @@ html(lang="en")
                                     li.nav-item
                                         a.nav-link.nav__link(href="#steps" role='button') How it work
                                     li.nav-item
-                                        a.nav-link.nav__link(href="#" role='button') Happy clients
+                                        a.nav-link.nav__link(href="#clients" role='button') Happy clients
                                     li.nav-item
-                                        a.nav-link.nav__link(href="#" role='button') Contacts us
+                                        a.nav-link.nav__link(href="#map" role='button') Contacts us
                                 button#buttonCloseNav.navbar__close.btn-close(type="button" data-bs-target="#navbarContent" aria-expanded="true" aria-controls="navbarContent" aria-label="Close navigation")
             section#feedback.feedback.bg-cl-one
                 .container-lg
                     h1.feedback__title.lh-1.text-uppercase Boost up your Local business
                     p.feedback__text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum typesetting
-                    form.feedback__form(class='row row-cols-1 row-cols-md-4 g-2' action="")
+                    form.feedback__form#formFeedback(class='row row-cols-1 row-cols-md-4 g-2' novalidate  action="")
                         .feedback__item.col
                             .input-group
                                 label.feedback__icon(class="input-group-text")
                                     img#personIcon(src='./images/icons/person.svg' alt='icon person')
-                                input.feedback__input(class='form-control' type="text" name='name' placeholder="Full Name")
+                                input.feedback__input#inputFeedbackName(class='form-control' type="text" name='name' placeholder="Full Name" required)
                         .feedback__item.col
                             .input-group
                                 label.feedback__icon(class="input-group-text")
@@ -316,4 +316,3 @@ html(lang="en")
                                 img.footer__icon-social#inIcon(src='./images/icons/in.svg' alt='linkedin')
                 .footer__copyright
                     p.footer__copyright-text All contents © copyright 2014 Business Theme. All rights reserved Designed by : akhilwebfolio
-
