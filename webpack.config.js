@@ -13,6 +13,7 @@ const font = require('./webpack/font');
 const devtool = require('./webpack/devtool');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 // const RuntimeAnalyzerPlugin = require('webpack-runtime-analyzer');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const PATHS = {
 	source: path.join(__dirname, 'src'),
@@ -50,13 +51,31 @@ const common = merge([{
 				chunks: ['index',
 					'common'
 				],
-				template: PATHS.source + '/index.pug'
+				template: PATHS.source + '/index.pug',
+				// favicon: PATHS.source + '/images/icons/brand.svg'
 			}),
 			new FriendlyErrorsWebpackPlugin(),
 			// new RuntimeAnalyzerPlugin()
+			new FaviconsWebpackPlugin({
+				logo: PATHS.source + '/images/icons/brand.svg',
+				favicons: {
+					icons: {
+						"android": true,
+						"favicons": ['favicon.ico'],
+						"appleIcon": [
+							"apple-touch-icon-180x180.png",
+							"apple-touch-icon-precomposed.png",
+							"apple-touch-icon.png"
+						  ],
+						"appleStartup": false,
+						"windows": false,
+						"yandex": false,
+					}
+				}
+
+			})
 		],
 	},
-	// lintJS(PATHS.source),
 	babel(),
 	pug(),
 	image(),
