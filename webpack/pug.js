@@ -1,4 +1,4 @@
-module.exports = function(){
+module.exports = function () {
 	return {
 		module: {
 			rules: [
@@ -6,10 +6,10 @@ module.exports = function(){
 					test: /\.pug$/,
 					loader: 'pug-loader',
 					options: {
-						pretty: false
-					}
-				}
-			]
-		}
+						pretty: false,
+					},
+				},
+			],
+		},
 	};
 };

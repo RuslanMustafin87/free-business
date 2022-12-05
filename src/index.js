@@ -71,35 +71,31 @@ const buttonOpenNav = document.getElementById('buttonOpenNav');
 const buttonCloseNav = document.getElementById('buttonCloseNav');
 const navbarContent = document.getElementById('navbarContent');
 
-buttonOpenNav.onclick = function() {
+buttonOpenNav.onclick = function () {
 	navbarContent.classList.add('show-collapse');
-}
+};
 
-buttonCloseNav.onclick = function() {
+buttonCloseNav.onclick = function () {
 	navbarContent.classList.remove('show-collapse');
-}
+};
 
 const listNavLinks = Array.from(document.querySelectorAll('.nav__link'));
 
-listNavLinks.forEach((item) => {
-	item.addEventListener('click', (event) => {
+listNavLinks.forEach(item => {
+	item.addEventListener('click', event => {
 		navbarContent.classList.remove('show-collapse');
-	})
-})
+	});
+});
 // const invalid = new CustomEvent('myinvalid');
-inputFeedbackName.addEventListener('invalid', (event) => {
-
+inputFeedbackName.addEventListener('invalid', event => {
 	inputFeedbackName.setCustomValidity('Error');
+});
 
-})
-
-formFeedback.addEventListener('submit', function(event) {
-
-	if(!this.checkValidity()) {
+formFeedback.addEventListener('submit', function (event) {
+	if (!this.checkValidity()) {
 		event.preventDefault();
-		console.log( 'ki' );
+		console.log('ki');
 		event.stopPropagation();
-
 	}
 	formFeedback.classList.add('was-validated');
 });

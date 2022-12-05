@@ -1,319 +1,353 @@
 doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        //- link(href="./images/brand-icon.png" rel="icon" type="image/png")
-        title Local business
-    body
-        .wrapper
-            header.header.osition-relative
-                .container-xl.d-flex.h-100
-                    nav.navbar.navbar-expand-md.navbar-light.align-items-center.w-100
-                        .container-xl.navbar-container.h-100
-                            a.navbar-brand(href="")
-                                img#brandIcon(src='./images/icons/brand.svg' alt="business-them")
-                            button#buttonOpenNav.navbar-toggler.ms-auto(type="button" data-bs-target='#navbarContent' aria-controls='navbarContent' aria-expanded='false' aria-label="Open navigation")
-                                span.navbar-toggler-icon
-                            .navbar-collapse.business-collapse#navbarContent
-                                ul.navbar-nav.ms-auto
-                                    li.nav-item
-                                        a.nav-link.nav__link(href="#feedback" role='button') Home
-                                    li.nav-item
-                                        a.nav-link.nav__link(href="#service" role='button') Service
-                                    li.nav-item
-                                        a.nav-link.nav__link(href="#about" role='button') About us
-                                    li.nav-item
-                                        a.nav-link.nav__link(href="#cost" role='button') Pricing table
-                                    li.nav-item
-                                        a.nav-link.nav__link(href="#steps" role='button') How it work
-                                    li.nav-item
-                                        a.nav-link.nav__link(href="#clients" role='button') Happy clients
-                                    li.nav-item
-                                        a.nav-link.nav__link(href="#map" role='button') Contacts us
-                                button#buttonCloseNav.navbar__close.btn-close(type="button" data-bs-target="#navbarContent" aria-expanded="true" aria-controls="navbarContent" aria-label="Close navigation")
-            section#feedback.feedback.bg-cl-one
-                .container-lg
-                    h1.feedback__title.lh-1.text-uppercase Boost up your Local business
-                    p.feedback__text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum typesetting
-                    form.feedback__form#formFeedback(class='row row-cols-1 row-cols-md-4 g-2' novalidate  action="")
-                        .feedback__item.col
-                            .input-group
-                                label.feedback__icon(class="input-group-text")
-                                    img#personIcon(src='./images/icons/person.svg' alt='icon person')
-                                input.feedback__input#inputFeedbackName(class='form-control' type="text" name='name' placeholder="Full Name" required)
-                        .feedback__item.col
-                            .input-group
-                                label.feedback__icon(class="input-group-text")
-                                    img#mailIcon(src='./images/icons/mail.svg' alt='icon mail')
-                                input.feedback__input(class='form-control' type="email" name='email' placeholder="Email Address")
-                        .feedback__item.col
-                            .input-group
-                                label.feedback__icon(class="input-group-text")
-                                    img#phoneIcon(src='./images/icons/phone.svg' alt='icon phone')
-                                input.feedback__input(class='form-control' type="tel" name='phone' placeholder="Phone")
-                        .feedback__item.col(class='text-center text-md-start')
-                            button.feedback__submit(class='form-button btn ' type="submit") Request a quote
-                .container-lg
-                    .feedback__slider.slider.carousel.slide#carouselFeedback(data-bs-ride='carousel' data-bs-interval='2000')
-                        .carousel-indicators.mb-0
-                            button.slider__dot.active(type='button' data-bs-target='#carouselFeedback' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
-                            button.slider__dot(type='button' data-bs-target='#carouselFeedback' data-bs-slide-to='1' aria-label='Slide 2')
-                            button.slider__dot(type='button' data-bs-target='#carouselFeedback' data-bs-slide-to='2' aria-label='Slide 3')
-                        .carousel-inner
-                            .carousel-item.active
-                                img.d-block.img-fluid.w-100#laptopImg0(src='./images/laptop.webp' alt='laptop')
-                            .carousel-item
-                                img.d-block.img-fluid.w-100#laptopImg1(src='./images/laptop1.webp' alt='laptop')
-                            .carousel-item
-                                img.d-block.img-fluid.w-100#laptopImg2(src='./images/laptop2.webp' alt='laptop')
-            section#service.service
-                .container-lg
-                    h2.service__title Our service
-                    p.service__text Lorem Ipsum is simply dummy Business industry.
-                .container-md
-                    ul.service__list.row.row-cols-1.row-cols-lg-2
-                        .service__item.col
-                            .service__content
-                                img.service__icon#scheduleIcon(src='./images/icons/schedule.svg' alt='schedule')
-                                //- span.service__icon.material-icons.text-cl-button schedule
-                                h2.service__content-title Material Icons
-                                p.service__content-text.
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                    since the 1500s, when an unknown printer
-                        .service__item.col
-                            .service__content
-                                img.service__icon#settingsIcon(src='./images/icons/settings.svg' alt='settings')
-                                //- span.service__icon.material-icons settings
-                                h2.service__content-title Material Icons
-                                p.service__content-text.
-                                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy
-                        .service__item.col
-                            .service__content
-                                img.service__icon#schoolIcon(src='./images/icons/school.svg' alt='school')
-                                //- span.service__icon.material-icons school
-                                h2.service__content-title Material Icons
-                                p.service__content-text.
-                                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will un
-                                    cover many web sites still in their infancy
-                        .service__item.col
-                            .service__content
-                                img.service__icon#rocketLaunchIcon(src='./images/icons/rocket_launch.svg' alt='rocket launch')
-                                //- span.service__icon.material-icons rocket_launch
-                                h2.service__content-title Material Icons
-                                p.service__content-text.
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
-                                    or randomised words which don't look even slightly believable.
-                        .service__item.col
-                            .service__content
-                                img.service__icon#sentimentSatisfiedIcon(src='./images/icons/sentiment_satisfied.svg' alt='sentiment satisfied')
-                                //- span.service__icon.material-icons sentiment_satisfied
-                                h2.service__content-title Material Icons
-                                p.service__content-text.
-                                    Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham
-                        .service__item.col
-                            .service__content
-                                img.service__icon#attachMoneyIcon(src='./images/icons/attach_money.svg' alt='attach money')
-                                //- span.service__icon.material-icons attach_money
-                                h2.service__content-title Material Icons
-                                p.service__content-text.
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
-                                    the 1500s, when an unknown printer.
-            section#about.about.d-flex
-                .about__left
-                .about__right
-                    h2.about__title About Us
-                    p.about__text.
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                                    remaining essentially unchanged. It was popularised in the ore recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                    button.about__button.btn Read More
-            section#cost.cost
-                .container-lg
-                    h2.cost__title Choos your price
-                    p.cost__text Lorem Ipsum is simply dummy text of the printing typesetting.
-                    .cost__container.row.row-cols-1.row-cols-md-3.text-center.align-items-center
-                        .cost__item.card.col
-                            h3.card-title Basic plan
-                            .card-body
-                                .price
-                                    p.price__number
-                                        sup $
-                                        |22
-                                    p.price__text per month
-                                ul.cost__card-list.list-group.list-group-flush
-                                    li.list-group-item 1 Account
-                                    li.list-group-item 8 hour support
-                                    li.list-group-item Custom Cloud Services
-                                a.btn.cost__button(href='' ) GET STARTED
-                        .cost__item.card.col#second-card
-                            h3.card-title Premium plan
-                            .card-body
-                                .price
-                                    p.price__number
-                                        sup $
-                                        |42
-                                    p.price__text per month
-                                ul.cost__card-list.list-group.list-group-flush
-                                    li.list-group-item 2 Account
-                                    li.list-group-item 100MB Storage
-                                    li.list-group-item Custom Cloud Services
-                                a.btn.cost__button.bg-cl-button(href='' ) GET STARTED
-                        .cost__item.card.col
-                            h3.card-title Gold plan
-                            .card-body
-                                .price
-                                    p.price__number
-                                        sup $
-                                        |62
-                                    p.price__text per month
-                                ul.cost__card-list.list-group.list-group-flush
-                                    li.list-group-item 8 Account
-                                    li.list-group-item 24 hour support
-                                    li.list-group-item Custom Cloud Services
-                                a.btn.cost__button.bg-cl-button(href='' ) GET STARTED
-            section#steps.steps
-                .container-lg
-                    h2.steps__title How it works
-                    p.steps__text Lorem Ipsum is simply dummy Business industry
-                .arrow-container.container-lg.position-relative
-                    .steps__container.row.row-cols-1.row-cols-md-4
-                        .steps__card.card.col
-                            img.steps__icon#headphonesIcon(src='./images/icons/headphones.svg' alt='headphones')
-                            h3.steps__card-title.card-title step 1
-                            p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        .steps__card.card.col
-                            img.steps__icon#unlockIcon(src='./images/icons/unlock.svg' alt='lock open')
-                            h3.steps__card-title.card-title step 2
-                            p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        .steps__card.card.col
-                            img.steps__icon#backupIcon(src='./images/icons/backup.svg' alt='backup')
-                            h3.steps__card-title.card-title step 3
-                            p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        .steps__card.card.col
-                            img.steps__icon#thumbIcon(src='./images/icons/thumb.svg' alt='thumb')
-                            h3.steps__card-title.card-title step 4
-                            p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    .con1
-                        .ex
-                        .tr1
-                        .tr2
-                    .con2
-                        .ex
-                        .tr1
-                        .tr2
-                    .con3
-                        .ex
-                        .tr1
-                        .tr2
-                button.steps__button.btn(type='button') Get start now
-            section#clients.clients
-                .container-lg
-                    h2.clients__title Happy clients
-                    p.clients__text Lorem Ipsum is simply dummy Business industry
-                    .clients__container.row.row-cols-1.row.row-cols-md-2.gx-36.gy-20
-                        .col
-                            .card.row.g-0.clients__card
-                                .col-4
-                                    img#client1.clients__image(src='./images/Layer26.webp' alt='clients1')
-                                .col-8.card-body
-                                    blockquote.clients__quote.
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambledit to make.
-                                    cite.clients__cite
-                                        span Madam Elisabath,
-                                        |  Creative Director
-                        .col
-                            .card.row.g-0.clients__card
-                                .col-4
-                                    img#client2.clients__image(src='./images/Layer22.png' alt='clients2')
-                                .col-8.card-body
-                                    blockquote.clients__quote.
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambledit to make.
-                                    cite.clients__cite
-                                        span Clips arter,
-                                        |  Lipsum directer
-                        .col
-                            .card.row.g-0.clients__card
-                                .col-4
-                                    img#client3.clients__image(src='./images/Layer25.png' alt='clients3')
-                                .col-8.card-body
-                                    blockquote.clients__quote.
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambledit to make.
-                                    cite.clients__cite
-                                        span zam cristafr,
-                                        |  manager
-                        .col
-                            .card.row.g-0.clients__card
-                                .col-4
-                                    img#client4.clients__image(src='./images/Layer23.png' alt='clients4')
-                                .col-8.card-body
-                                    blockquote.clients__quote.
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
-                                                when an unknown printer took a galley of type and scrambledit to make.
-                                    cite.clients__cite
-                                        span Darwin Michle,
-                                        |  Project manager
-            section#map.map
-                .container-lg
-                    h2.map__title Newsletter
-                    p.map__text Lorem Ipsum is simply dummy Business industry
-                    form.map__form.row.g-2(action="#")
-                        .map__item.col-12.col-md
-                            .input-group
-                                label.map__icon(class="input-group-text")
-                                    img#personIconMap(src='./images/icons/person.svg' alt='icon person')
-                                input.map__input(class='form-control' type="text" name='name' placeholder="Full Name")
-                        .map__item.col-12.col-md
-                            .input-group
-                                label.map__icon(class="input-group-text")
-                                    img#mailIconMap(src='./images/icons/mail.svg' alt='icon pemail')
-                                input.map__input(class='form-control' type="email" name='email' placeholder="Email Address")
-                        .map__item.col-12.col-md-auto(class='text-center text-md-start')
-                            button.map__submit(class='form-button btn' type="submit") Request a quote
-                    .map__wrapper
-                        .map__map
-                            .map__circle.circle
-                                address.circle__address
-                                    h3.circle__title address
-                                    p.circle__text Business street
-                                    p.circle__text Second north section
-                                    p.circle__text Bavani nagar. 88769
-                                    p.circle__text Call: +987-9976-999
-                                    p.circle__email info@businessface.com
-                                address
-            footer.footer
-                .container-lg.footer__container
-                    nav.footer__nav(class='nav gx-45')
-                        a.footer__link(class='nav-link' href="#feedback" role='button') Home
-                        a.footer__link(class='nav-link' href="#service" role='button') Service
-                        a.footer__link(class='nav-link' href="#about" role='button') About us
-                        a.footer__link(class='nav-link' href="#cost" role='button') Pricing table
-                        a.footer__link(class='nav-link' href="#steps" role='button') How it work
-                        a.footer__link(class='nav-link' href="#clients" role='button') Happy clients
-                        a.footer__link(class='nav-link' href="#map" role='button') Contacts us
-                    address.footer__phone
-                        img#phoneIconFooter(src='./images/icons/phone.svg' alt='icon phone')
-                        span  +987 9976 999
-                    ul.footer__social(class='list-group list-group-horizontal')
-                        li(class='list-group-item border-0')
-                            a.footer__link-social(class='' href='#')
-                                img.footer__icon-social#twitterIcon(src='./images/icons/twitter.svg' alt='twitter')
-                        li(class='list-group-item border-0')
-                            a.footer__link-social(class='' href='#')
-                                img.footer__icon-social#facebookIcon(src='./images/icons/facebook.svg' alt='facebook')
-                        li(class='list-group-item border-0')
-                            a.footer__link-social(class='' href='#')
-                                img.footer__icon-social#googleIcon(src='./images/icons/google+.svg' alt='google')
-                        li(class='list-group-item border-0')
-                            a.footer__link-social(class='' href='#')
-                                img.footer__icon-social#inIcon(src='./images/icons/in.svg' alt='linkedin')
-                .footer__copyright
-                    p.footer__copyright-text All contents © copyright 2014 Business Theme. All rights reserved Designed by : akhilwebfolio
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		link(rel='icon', href='./assets/brand.svg', type='image/svg+xml')
+		link(rel='mask-icon', href='./assets/mask-brand.svg', type='image/svg+xml', color='1ca8dd')
+		title Local business
+	body
+		.wrapper
+			header.header.osition-relative
+				.container-xl.d-flex.h-100
+					nav.navbar.navbar-expand-md.navbar-light.align-items-center.w-100
+						.container-xl.navbar-container.h-100
+							a.navbar-brand(href='')
+								img#brandIcon(src='./images/icons/brand.svg', alt='business-them')
+							button#buttonOpenNav.navbar-toggler.ms-auto(
+								type='button',
+								data-bs-target='#navbarContent',
+								aria-controls='navbarContent',
+								aria-expanded='false',
+								aria-label='Open navigation')
+								span.navbar-toggler-icon
+							#navbarContent.navbar-collapse.business-collapse
+								ul.navbar-nav.ms-auto
+									li.nav-item
+										a.nav-link.nav__link(href='#feedback', role='button') Home
+									li.nav-item
+										a.nav-link.nav__link(href='#service', role='button') Service
+									li.nav-item
+										a.nav-link.nav__link(href='#about', role='button') About us
+									li.nav-item
+										a.nav-link.nav__link(href='#cost', role='button') Pricing table
+									li.nav-item
+										a.nav-link.nav__link(href='#steps', role='button') How it work
+									li.nav-item
+										a.nav-link.nav__link(href='#clients', role='button') Happy clients
+									li.nav-item
+										a.nav-link.nav__link(href='#map', role='button') Contacts us
+								button#buttonCloseNav.navbar__close.btn-close(
+									type='button',
+									data-bs-target='#navbarContent',
+									aria-expanded='true',
+									aria-controls='navbarContent',
+									aria-label='Close navigation')
+			section#feedback.feedback.bg-cl-one
+				.container-lg
+					h1.feedback__title.lh-1.text-uppercase Boost up your Local business
+					p.feedback__text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum typesetting
+					form#formFeedback.feedback__form.row.row-cols-1.row-cols-md-4.g-2(novalidate, action='')
+						.feedback__item.col
+							.input-group
+								label.feedback__icon.input-group-text
+									img#personIcon(src='./images/icons/person.svg', alt='icon person')
+								input#inputFeedbackName.feedback__input.form-control(
+									type='text',
+									name='name',
+									placeholder='Full Name',
+									required)
+						.feedback__item.col
+							.input-group
+								label.feedback__icon.input-group-text
+									img#mailIcon(src='./images/icons/mail.svg', alt='icon mail')
+								input.feedback__input.form-control(type='email', name='email', placeholder='Email Address')
+						.feedback__item.col
+							.input-group
+								label.feedback__icon.input-group-text
+									img#phoneIcon(src='./images/icons/phone.svg', alt='icon phone')
+								input.feedback__input.form-control(type='tel', name='phone', placeholder='Phone')
+						.feedback__item.col.text-center.text-md-start
+							button.feedback__submit.form-button.btn(type='submit') Request a quote
+				.container-lg
+					#carouselFeedback.feedback__slider.slider.carousel.slide(data-bs-ride='carousel', data-bs-interval='2000')
+						.carousel-indicators.mb-0
+							button.slider__dot.active(
+								type='button',
+								data-bs-target='#carouselFeedback',
+								data-bs-slide-to='0',
+								aria-current='true',
+								aria-label='Slide 1')
+							button.slider__dot(
+								type='button',
+								data-bs-target='#carouselFeedback',
+								data-bs-slide-to='1',
+								aria-label='Slide 2')
+							button.slider__dot(
+								type='button',
+								data-bs-target='#carouselFeedback',
+								data-bs-slide-to='2',
+								aria-label='Slide 3')
+						.carousel-inner
+							.carousel-item.active
+								img#laptopImg0.d-block.img-fluid.w-100(src='./images/laptop.webp', alt='laptop')
+							.carousel-item
+								img#laptopImg1.d-block.img-fluid.w-100(src='./images/laptop1.webp', alt='laptop')
+							.carousel-item
+								img#laptopImg2.d-block.img-fluid.w-100(src='./images/laptop2.webp', alt='laptop')
+			section#service.service
+				.container-lg
+					h2.service__title Our service
+					p.service__text Lorem Ipsum is simply dummy Business industry.
+				.container-md
+					ul.service__list.row.row-cols-1.row-cols-lg-2
+						.service__item.col
+							.service__content
+								img#scheduleIcon.service__icon(src='./images/icons/schedule.svg', alt='schedule')
+								//- span.service__icon.material-icons.text-cl-button schedule
+								h2.service__content-title Material Icons
+								p.service__content-text.
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+						.service__item.col
+							.service__content
+								img#settingsIcon.service__icon(src='./images/icons/settings.svg', alt='settings')
+								//- span.service__icon.material-icons settings
+								h2.service__content-title Material Icons
+								p.service__content-text.
+									Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy
+						.service__item.col
+							.service__content
+								img#schoolIcon.service__icon(src='./images/icons/school.svg', alt='school')
+								//- span.service__icon.material-icons school
+								h2.service__content-title Material Icons
+								p.service__content-text.
+									Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will un
+									cover many web sites still in their infancy
+						.service__item.col
+							.service__content
+								img#rocketLaunchIcon.service__icon(src='./images/icons/rocket_launch.svg', alt='rocket launch')
+								//- span.service__icon.material-icons rocket_launch
+								h2.service__content-title Material Icons
+								p.service__content-text.
+									There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
+									or randomised words which don't look even slightly believable.
+						.service__item.col
+							.service__content
+								img#sentimentSatisfiedIcon.service__icon(
+									src='./images/icons/sentiment_satisfied.svg',
+									alt='sentiment satisfied')
+								//- span.service__icon.material-icons sentiment_satisfied
+								h2.service__content-title Material Icons
+								p.service__content-text.
+									Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham
+						.service__item.col
+							.service__content
+								img#attachMoneyIcon.service__icon(src='./images/icons/attach_money.svg', alt='attach money')
+								//- span.service__icon.material-icons attach_money
+								h2.service__content-title Material Icons
+								p.service__content-text.
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+									the 1500s, when an unknown printer.
+			section#about.about.d-flex
+				.about__left
+				.about__right
+					h2.about__title About Us
+					p.about__text.
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+						when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+						remaining essentially unchanged. It was popularised in the ore recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+					button.about__button.btn Read More
+			section#cost.cost
+				.container-lg
+					h2.cost__title Choos your price
+					p.cost__text Lorem Ipsum is simply dummy text of the printing typesetting.
+					.cost__container.row.row-cols-1.row-cols-md-3.text-center.align-items-center
+						.cost__item.card.col
+							h3.card-title Basic plan
+							.card-body
+								.price
+									p.price__number
+										sup $
+										| 22
+									p.price__text per month
+								ul.cost__card-list.list-group.list-group-flush
+									li.list-group-item 1 Account
+									li.list-group-item 8 hour support
+									li.list-group-item Custom Cloud Services
+								a.btn.cost__button(href='') GET STARTED
+						#second-card.cost__item.card.col
+							h3.card-title Premium plan
+							.card-body
+								.price
+									p.price__number
+										sup $
+										| 42
+									p.price__text per month
+								ul.cost__card-list.list-group.list-group-flush
+									li.list-group-item 2 Account
+									li.list-group-item 100MB Storage
+									li.list-group-item Custom Cloud Services
+								a.btn.cost__button.bg-cl-button(href='') GET STARTED
+						.cost__item.card.col
+							h3.card-title Gold plan
+							.card-body
+								.price
+									p.price__number
+										sup $
+										| 62
+									p.price__text per month
+								ul.cost__card-list.list-group.list-group-flush
+									li.list-group-item 8 Account
+									li.list-group-item 24 hour support
+									li.list-group-item Custom Cloud Services
+								a.btn.cost__button.bg-cl-button(href='') GET STARTED
+			section#steps.steps
+				.container-lg
+					h2.steps__title How it works
+					p.steps__text Lorem Ipsum is simply dummy Business industry
+				.arrow-container.container-lg.position-relative
+					.steps__container.row.row-cols-1.row-cols-md-4
+						.steps__card.card.col
+							img#headphonesIcon.steps__icon(src='./images/icons/headphones.svg', alt='headphones')
+							h3.steps__card-title.card-title step 1
+							p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+						.steps__card.card.col
+							img#unlockIcon.steps__icon(src='./images/icons/unlock.svg', alt='lock open')
+							h3.steps__card-title.card-title step 2
+							p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+						.steps__card.card.col
+							img#backupIcon.steps__icon(src='./images/icons/backup.svg', alt='backup')
+							h3.steps__card-title.card-title step 3
+							p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+						.steps__card.card.col
+							img#thumbIcon.steps__icon(src='./images/icons/thumb.svg', alt='thumb')
+							h3.steps__card-title.card-title step 4
+							p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+					.con1
+						.ex
+						.tr1
+						.tr2
+					.con2
+						.ex
+						.tr1
+						.tr2
+					.con3
+						.ex
+						.tr1
+						.tr2
+				button.steps__button.btn(type='button') Get start now
+			section#clients.clients
+				.container-lg
+					h2.clients__title Happy clients
+					p.clients__text Lorem Ipsum is simply dummy Business industry
+					.clients__container.row.row-cols-1.row.row-cols-md-2.gx-36.gy-20
+						.col
+							.card.row.g-0.clients__card
+								.col-4
+									img#client1.clients__image(src='./images/Layer26.webp', alt='clients1')
+								.col-8.card-body
+									blockquote.clients__quote.
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+										Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
+										when an unknown printer took a galley of type and scrambledit to make.
+									cite.clients__cite
+										span Madam Elisabath,
+										|
+										| Creative Director
+						.col
+							.card.row.g-0.clients__card
+								.col-4
+									img#client2.clients__image(src='./images/Layer22.png', alt='clients2')
+								.col-8.card-body
+									blockquote.clients__quote.
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+										Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
+										when an unknown printer took a galley of type and scrambledit to make.
+									cite.clients__cite
+										span Clips arter,
+										|
+										| Lipsum directer
+						.col
+							.card.row.g-0.clients__card
+								.col-4
+									img#client3.clients__image(src='./images/Layer25.png', alt='clients3')
+								.col-8.card-body
+									blockquote.clients__quote.
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+										Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
+										when an unknown printer took a galley of type and scrambledit to make.
+									cite.clients__cite
+										span zam cristafr,
+										|
+										| manager
+						.col
+							.card.row.g-0.clients__card
+								.col-4
+									img#client4.clients__image(src='./images/Layer23.png', alt='clients4')
+								.col-8.card-body
+									blockquote.clients__quote.
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+										Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
+										when an unknown printer took a galley of type and scrambledit to make.
+									cite.clients__cite
+										span Darwin Michle,
+										|
+										| Project manager
+			section#map.map
+				.container-lg
+					h2.map__title Newsletter
+					p.map__text Lorem Ipsum is simply dummy Business industry
+					form.map__form.row.g-2(action='#')
+						.map__item.col-12.col-md
+							.input-group
+								label.map__icon.input-group-text
+									img#personIconMap(src='./images/icons/person.svg', alt='icon person')
+								input.map__input.form-control(type='text', name='name', placeholder='Full Name')
+						.map__item.col-12.col-md
+							.input-group
+								label.map__icon.input-group-text
+									img#mailIconMap(src='./images/icons/mail.svg', alt='icon pemail')
+								input.map__input.form-control(type='email', name='email', placeholder='Email Address')
+						.map__item.col-12.col-md-auto.text-center.text-md-start
+							button.map__submit.form-button.btn(type='submit') Request a quote
+					.map__wrapper
+						.map__map
+							.map__circle.circle
+								address.circle__address
+									h3.circle__title address
+									p.circle__text Business street
+									p.circle__text Second north section
+									p.circle__text Bavani nagar. 88769
+									p.circle__text Call: +987-9976-999
+									p.circle__email info@businessface.com
+								address
+			footer.footer
+				.container-lg.footer__container
+					nav.footer__nav.nav.gx-45
+						a.footer__link.nav-link(href='#feedback', role='button') Home
+						a.footer__link.nav-link(href='#service', role='button') Service
+						a.footer__link.nav-link(href='#about', role='button') About us
+						a.footer__link.nav-link(href='#cost', role='button') Pricing table
+						a.footer__link.nav-link(href='#steps', role='button') How it work
+						a.footer__link.nav-link(href='#clients', role='button') Happy clients
+						a.footer__link.nav-link(href='#map', role='button') Contacts us
+					address.footer__phone
+						img#phoneIconFooter(src='./images/icons/phone.svg', alt='icon phone')
+						span +987 9976 999
+					ul.footer__social.list-group.list-group-horizontal
+						li.list-group-item.border-0
+							a.footer__link-social(class='', href='#')
+								img#twitterIcon.footer__icon-social(src='./images/icons/twitter.svg', alt='twitter')
+						li.list-group-item.border-0
+							a.footer__link-social(class='', href='#')
+								img#facebookIcon.footer__icon-social(src='./images/icons/facebook.svg', alt='facebook')
+						li.list-group-item.border-0
+							a.footer__link-social(class='', href='#')
+								img#googleIcon.footer__icon-social(src='./images/icons/google+.svg', alt='google')
+						li.list-group-item.border-0
+							a.footer__link-social(class='', href='#')
+								img#inIcon.footer__icon-social(src='./images/icons/in.svg', alt='linkedin')
+				.footer__copyright
+					p.footer__copyright-text All contents © copyright 2014 Business Theme. All rights reserved Designed by : akhilwebfolio
+				.jjj

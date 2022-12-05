@@ -1,6 +1,6 @@
 const TerserJsPlugin = require('terser-webpack-plugin');
 
-module.exports = function(){
+module.exports = function () {
 	return {
 		optimization: {
 			minimizer: [
@@ -9,6 +9,6 @@ module.exports = function(){
 					parallel: true,
 				}),
 			],
-		}
+		},
 	};
 };

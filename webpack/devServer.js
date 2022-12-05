@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function () {
 	return {
 		devServer: {
 			historyApiFallback: true,
@@ -8,11 +8,8 @@ module.exports = function() {
 			open: true,
 			compress: true,
 			port: 3010,
-			hot: true
+			hot: true,
 		},
-		plugins: [
-			new webpack.HotModuleReplacementPlugin(),
-		],
-
+		plugins: [new webpack.HotModuleReplacementPlugin()],
 	};
 };
