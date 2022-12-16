@@ -10,9 +10,9 @@ const image = require('./webpack/image');
 const font = require('./webpack/font');
 const devtool = require('./webpack/devtool');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-// const RuntimeAnalyzerPlugin = require('webpack-runtime-analyzer');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const PATHS = {
 	source: path.join(__dirname, 'src'),
@@ -53,7 +53,6 @@ const common = merge([
 				// favicon: PATHS.source + '/images/icons/brand.svg'
 			}),
 			new FriendlyErrorsWebpackPlugin(),
-			// new RuntimeAnalyzerPlugin()
 			new FaviconsWebpackPlugin({
 				logo: PATHS.source + '/images/icons/brand.svg',
 				// publicPath: '',
@@ -93,6 +92,7 @@ const common = merge([
 					},
 				],
 			}),
+			new ESLintPlugin(),
 		],
 	},
 	babel(),
@@ -119,7 +119,6 @@ module.exports = function (env, argv) {
 			css(argv.mode),
 			{
 				devServer: {
-					// static: './dist',
 					historyApiFallback: true,
 					compress: true,
 					port: 3010,

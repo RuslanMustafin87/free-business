@@ -1,4 +1,6 @@
+/* eslint-disable no-undef */
 import './scss/index.scss';
+// eslint-disable-next-line no-unused-vars
 import { Carousel } from 'bootstrap';
 
 import brandPath from './images/icons/brand.svg';
@@ -82,12 +84,12 @@ buttonCloseNav.onclick = function () {
 const listNavLinks = Array.from(document.querySelectorAll('.nav__link'));
 
 listNavLinks.forEach(item => {
-	item.addEventListener('click', event => {
+	item.addEventListener('click', () => {
 		navbarContent.classList.remove('show-collapse');
 	});
 });
 // const invalid = new CustomEvent('myinvalid');
-inputFeedbackName.addEventListener('invalid', event => {
+inputFeedbackName.addEventListener('invalid', () => {
 	inputFeedbackName.setCustomValidity('Error');
 });
 
@@ -99,3 +101,17 @@ formFeedback.addEventListener('submit', function (event) {
 	}
 	formFeedback.classList.add('was-validated');
 });
+
+const m = () => console.log('l');
+const j = ['jjjjj', 'kkkkkk', 'kkkkkk'];
+const b = 2;
+
+function foo(err, ddd) {
+	console.log(err, ddd);
+}
+foo();
+
+const ob = { sdfsdf: '1232', num: 12 };
+console.log(m, j, b, ob);
+
+if (b) console.log('yes');
