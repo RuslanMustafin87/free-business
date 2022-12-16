@@ -104,9 +104,9 @@ formFeedback.addEventListener("submit", function (event) {
 
 const m = () => console.log("l");
 const j = [
-	"jjjjj",
+	'jjjjj',
 	"kkkkkk",
-	"kkkkkk" 
+	"kkkkkk"
 ];
 const b = 2;
 
