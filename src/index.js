@@ -96,25 +96,7 @@ inputFeedbackName.addEventListener("invalid", () => {
 formFeedback.addEventListener("submit", function (event) {
 	if (!this.checkValidity()) {
 		event.preventDefault();
-		console.log("ki");
 		event.stopPropagation();
 	}
 	formFeedback.classList.add("was-validated");
 });
-
-const m = () => console.log("l");
-const j = ["jjjjj", "kkkkkk", "kkkkkk"];
-const b = 2;
-
-function foo(err, ddd) {
-	console.log(err, ddd);
-	console.log("fff");
-}
-foo();
-
-const ob = { sdfsdf: "1232", num: 12 };
-console.log(m, j, b, ob);
-
-if (b) {
-	console.log("yes");
-}

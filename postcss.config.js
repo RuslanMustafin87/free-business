@@ -1,21 +1,21 @@
-const purgecss = require('@fullhuman/postcss-purgecss');
-const postcssPresetEnv = require('postcss-preset-env');
+const purgecss = require("@fullhuman/postcss-purgecss");
+const postcssPresetEnv = require("postcss-preset-env");
 
 module.exports = api => {
 	// syntax: 'postcss-scss',
-	if (api.mode === 'development') {
+	if (api.mode === "development") {
 		return {
-			plugins: ['mqpacker', postcssPresetEnv()],
+			plugins: ["mqpacker", postcssPresetEnv()],
 		};
 	}
 
 	return {
 		plugins: [
-			'mqpacker',
+			"mqpacker",
 			postcssPresetEnv(),
 			purgecss({
-				content: ['./src/**/*.pug'],
-				safelist: ['collapsing', 'show-collapse'],
+				content: ["./src/**/*.pug"],
+				safelist: ["collapsing", "show-collapse", "active"],
 			}),
 		],
 	};
