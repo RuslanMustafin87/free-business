@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { merge } = require("webpack-merge");
 const CopyPlugin = require("copy-webpack-plugin");
 const common = require("./webpack.common");
@@ -20,6 +21,7 @@ module.exports = merge([
 		},
 		optimization: {
 			minimize: true,
+			minimizer: [new CssMinimizerPlugin()],
 			runtimeChunk: false,
 			splitChunks: {
 				cacheGroups: {
