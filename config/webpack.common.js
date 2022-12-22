@@ -1,20 +1,18 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
+import FaviconsWebpackPlugin from "favicons-webpack-plugin";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const PATHS = {
-	source: path.resolve(__dirname, "..", "src"),
-	build: path.resolve(__dirname, "..", "dist"),
+	source: resolve(__dirname, "..", "src"),
+	build: resolve(__dirname, "..", "dist"),
 };
 
-module.exports = {
+export default {
 	entry: {
 		index: PATHS.source + "/index.js",
-	},
-	output: {
-		path: PATHS.build,
-		filename: "js/[name].js",
 	},
 	module: {
 		rules: [
@@ -23,6 +21,10 @@ module.exports = {
 				exclude: /(node_modules|dist)/,
 				use: {
 					loader: "babel-loader",
+					// TODO найти решение чтобы не удалялся код bootstarap carousel
+					// options: {
+					// 	plugins: [["import", { libraryName: "bootstrap", style: true }]],
+					// },
 				},
 			},
 			{

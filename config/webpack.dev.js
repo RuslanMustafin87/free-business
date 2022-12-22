@@ -1,10 +1,11 @@
-// const path = require("path");
-const webpack = require("webpack");
-const { merge } = require("webpack-merge");
-const ESLintPlugin = require("eslint-webpack-plugin");
-const common = require("./webpack.common");
+// import { HotModuleReplacementPlugin } from "webpack";
+import webpack from "webpack";
+// const webpack = require("webpack");
+import { merge } from "webpack-merge";
+import ESLintPlugin from "eslint-webpack-plugin";
+import common from "./webpack.common.js";
 
-module.exports = merge([
+export default merge([
 	common,
 	{
 		mode: "development",
@@ -22,12 +23,12 @@ module.exports = merge([
 				},
 			],
 		},
+		// plugins: [new ESLintPlugin(), new HotModuleReplacementPlugin()],
 		plugins: [new ESLintPlugin(), new webpack.HotModuleReplacementPlugin()],
 		devServer: {
 			historyApiFallback: true,
 			compress: true,
 			port: 3010,
-			hot: true,
 			watchFiles: {
 				paths: ["src/**/*.*"],
 				options: {

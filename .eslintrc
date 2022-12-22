@@ -1,0 +1,22 @@
+{
+	"root": true,
+	"env": {
+		"es6": true,
+		"browser": true,
+		"node": true
+	},
+	"extends": ["eslint:recommended", "plugin:prettier/recommended"],
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"rules": {
+		"eqeqeq": ["error", "always", { "null": "ignore" }],
+		"arrow-spacing": "error",
+		"brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+		"prefer-const": "error",
+		"prefer-destructuring": "warn",
+		"prefer-object-spread": "warn",
+		"operator-assignment": "error",
+		"no-var": "error"
+	}
+}
