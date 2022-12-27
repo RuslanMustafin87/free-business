@@ -11,7 +11,7 @@ import common from "./webpack.common.js";
 import zlib from "zlib";
 import purgecss from "@fullhuman/postcss-purgecss";
 import postcssPresetEnv from "postcss-preset-env";
-import postcssConfig from "../postcss.config.js";
+import postcssConfig from "../postcss.myconfig.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PATHS = {
@@ -40,9 +40,9 @@ export default merge([
 					default: false,
 					commons: {
 						test: /\.(js|css|scss)$/,
+						name: "common",
 						chunks: "all",
 						minChunks: 2,
-						name: "common",
 						enforce: true,
 					},
 				},
@@ -50,32 +50,26 @@ export default merge([
 		},
 		module: {
 			rules: [
+				// {
+				// 	test: /\.css$/,
+				// 	exclude: /node_modules/,
+				// 	use: [
+				// 		MiniCssExtractPlugin.loader,
+				// 		"css-loader",
+				// 		"postcss-loader"
+				// 	],
+				// },
 				{
-					test: /\.css$/,
+					test: /\.s?css$/,
 					exclude: /node_modules/,
-					use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
-				},
-				{
-					test: /\.scss$/,
-					exclude: /node_modules/,
-					// use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
 					use: [
 						MiniCssExtractPlugin.loader,
 						"css-loader",
 						{
 							loader: "postcss-loader",
-							options: postcssConfig(env, api)
-							// 	postcssOptions: {
-							// 		plugins: [
-							// 			"mqpacker",
-							// 			postcssPresetEnv(),
-							// 			purgecss({
-							// 				content: ["./src/**/*.pug"],
-							// 				safelist: ["collapsing", "show-collapse", "active"],
-							// 			}),
-							// 		],
-							// 	},
-							// },
+							options: {
+								postcssOptions: postcssConfig("production")
+							},
 						},
 						"sass-loader"
 					],
@@ -89,7 +83,7 @@ export default merge([
 			new CompressionPlugin({
 				filename: "[path][base].br",
 				algorithm: "brotliCompress",
-				test: /\.(js|css|html)$/,
+				test: /\.(js|css|html|woff2|woff|ttf)$/,
 				compressionOptions: {
 				  params: {
 					[zlib.constants.BROTLI_PARAM_QUALITY]: 11,
@@ -102,8 +96,8 @@ export default merge([
 			new CopyPlugin({
 				patterns: [
 					{
-						from: PATHS.source + "/images/favicons/",
-						to: PATHS.build + "/assets/",
+						from: `${PATHS.source}/images/favicons`,
+						to: `${PATHS.build}/assets`,
 					},
 				],
 			}),

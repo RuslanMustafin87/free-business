@@ -17,14 +17,13 @@ export default {
 	module: {
 		rules: [
 			{
-				test: /\.m?js$/,
+				test: /\.js$/,
 				exclude: /(node_modules|dist)/,
 				use: {
 					loader: "babel-loader",
-					// TODO найти решение чтобы не удалялся код bootstarap carousel
-					// options: {
-					// 	plugins: [["import", { libraryName: "bootstrap", style: true }]],
-					// },
+					options: {
+						plugins: [["import", { libraryName: "bootstrap", style: true }]],
+					},
 				},
 			},
 			{
@@ -41,11 +40,13 @@ export default {
 			},
 			{
 				test: /\.svg$/,
-				type: "asset/resource",
+				type: "asset",
 				generator: { filename: "images/icons/[name].[contenthash:8][ext]" },
+				parser: { dataUrlCondition: { maxSize: 2 * 1024 }},
 				use: [{ loader: "svgo-loader", options: { plugins: [{ name: "cleanupIDs", active: false }] } }],
 			},
 			{
+				// TODO копрессия шрифтов
 				test: /\.woff2|woff|ttf$/,
 				type: "asset/resource",
 				generator: {
@@ -58,7 +59,8 @@ export default {
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			chunks: ["index", "common"],
-			template: PATHS.source + "/index.pug",
+			template: `${PATHS.source}/index.pug`,
+			title: "Local business"
 		}),
 		new FriendlyErrorsWebpackPlugin(),
 		new FaviconsWebpackPlugin({

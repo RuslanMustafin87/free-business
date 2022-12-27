@@ -1,13 +1,13 @@
 // const purgecss = require("@fullhuman/postcss-purgecss");
-import purgecss from "@fullhuman/postcss-purgecss";
 // const postcssPresetEnv = require("postcss-preset-env");
+import purgecss from "@fullhuman/postcss-purgecss";
 import postcssPresetEnv from "postcss-preset-env";
 
-export default function (api) {
+export default function (mode) {
 	// syntax: 'postcss-scss',
-	console.log(api.mode);
-	console.log("kkk");
-	if (api.mode === "development") {
+	// console.log(api.mode);
+	// console.log("kkk");
+	if (mode === "development") {
 		return {
 			plugins: ["mqpacker", postcssPresetEnv()],
 		};
@@ -19,7 +19,7 @@ export default function (api) {
 			postcssPresetEnv(),
 			purgecss({
 				content: ["./src/**/*.pug"],
-				// safelist: ["collapsing", "show-collapse", "active"],
+				safelist: ["collapsing", "show-collapse", "active"],
 			}),
 		],
 	};

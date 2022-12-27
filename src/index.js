@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import "./scss/index.scss";
-// eslint-disable-next-line no-unused-vars
-import { Carousel } from "bootstrap";
+import "./vendors/bootstrap/carousel.mjs";
 
 import brandPath from "./images/icons/brand.svg";
 import personPath from "./images/icons/person.svg";

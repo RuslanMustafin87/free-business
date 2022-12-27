@@ -3,6 +3,7 @@ import webpack from "webpack";
 // const webpack = require("webpack");
 import { merge } from "webpack-merge";
 import ESLintPlugin from "eslint-webpack-plugin";
+import postcssConfig from "../postcss.myconfig.js";
 import common from "./webpack.common.js";
 
 export default merge([
@@ -11,15 +12,25 @@ export default merge([
 		mode: "development",
 		module: {
 			rules: [
+				// {
+				// 	test: /\.css$/,
+				// 	exclude: /node_modules/,
+				// 	use: ["style-loader", "css-loader", "postcss-loader"],
+				// },
 				{
-					test: /\.css$/,
+					test: /\.s?css$/,
 					exclude: /node_modules/,
-					use: ["style-loader", "css-loader", "postcss-loader"],
-				},
-				{
-					test: /\.scss$/,
-					exclude: /node_modules/,
-					use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+					use: [
+						"style-loader",
+						"css-loader",
+						{
+							loader: "postcss-loader",
+							options: {
+								postcssOptions: postcssConfig("development"),
+							},
+						},
+						"sass-loader",
+					],
 				},
 			],
 		},
