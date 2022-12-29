@@ -1,27 +1,20 @@
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import TerserWebpackPlugin from "terser-webpack-plugin";
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
-import { merge } from "webpack-merge";
-import CopyPlugin from "copy-webpack-plugin";
-import CompressionPlugin from "compression-webpack-plugin";
-// import common from "./webpack.common";
-import common from "./webpack.common.js";
-import zlib from "zlib";
-import purgecss from "@fullhuman/postcss-purgecss";
-import postcssPresetEnv from "postcss-preset-env";
-import postcssConfig from "../postcss.myconfig.js";
+const { resolve } = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { merge } = require("webpack-merge");
+const CopyPlugin = require("copy-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const common = require("./webpack.common.js");
+const zlib = require("zlib");
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const PATHS = {
 	source: resolve(__dirname, "..", "src"),
 	build: resolve(__dirname, "..", "dist"),
 };
 
-export default merge([
+module.exports = merge([
 	common,
-
 	{
 		mode: "production",
 		output: {
@@ -45,34 +38,21 @@ export default merge([
 						minChunks: 2,
 						enforce: true,
 					},
+					vendor: {
+						name: "vendors",
+						test: /node_modules/,
+						chunks: "all",
+						enforce: true,
+					},
 				},
 			},
 		},
 		module: {
 			rules: [
-				// {
-				// 	test: /\.css$/,
-				// 	exclude: /node_modules/,
-				// 	use: [
-				// 		MiniCssExtractPlugin.loader,
-				// 		"css-loader",
-				// 		"postcss-loader"
-				// 	],
-				// },
 				{
 					test: /\.s?css$/,
 					exclude: /node_modules/,
-					use: [
-						MiniCssExtractPlugin.loader,
-						"css-loader",
-						{
-							loader: "postcss-loader",
-							options: {
-								postcssOptions: postcssConfig("production")
-							},
-						},
-						"sass-loader"
-					],
+					use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
 				},
 			],
 		},
@@ -85,9 +65,9 @@ export default merge([
 				algorithm: "brotliCompress",
 				test: /\.(js|css|html|woff2|woff|ttf)$/,
 				compressionOptions: {
-				  params: {
-					[zlib.constants.BROTLI_PARAM_QUALITY]: 11,
-				  },
+					params: {
+						[zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+					},
 				},
 				threshold: 10240,
 				minRatio: 0.8,

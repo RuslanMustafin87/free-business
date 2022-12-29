@@ -1,40 +1,32 @@
-// import { HotModuleReplacementPlugin } from "webpack";
-import webpack from "webpack";
-// const webpack = require("webpack");
-import { merge } from "webpack-merge";
-import ESLintPlugin from "eslint-webpack-plugin";
-import postcssConfig from "../postcss.myconfig.js";
-import common from "./webpack.common.js";
+const webpack = require("webpack");
+const { merge } = require("webpack-merge");
+const ESLintPlugin = require("eslint-webpack-plugin");
+const common = require("./webpack.common.js");
 
-export default merge([
+module.exports = merge([
 	common,
 	{
 		mode: "development",
 		module: {
 			rules: [
-				// {
-				// 	test: /\.css$/,
-				// 	exclude: /node_modules/,
-				// 	use: ["style-loader", "css-loader", "postcss-loader"],
-				// },
 				{
 					test: /\.s?css$/,
 					exclude: /node_modules/,
 					use: [
 						"style-loader",
 						"css-loader",
-						{
-							loader: "postcss-loader",
-							options: {
-								postcssOptions: postcssConfig("development"),
-							},
-						},
+						// {
+						// 	loader: "postcss-loader",
+						// 	options: {
+						// 		postcssOptions: postcssConfig("development"),
+						// 	},
+						// },
+						"postcss-loader",
 						"sass-loader",
 					],
 				},
 			],
 		},
-		// plugins: [new ESLintPlugin(), new HotModuleReplacementPlugin()],
 		plugins: [new ESLintPlugin(), new webpack.HotModuleReplacementPlugin()],
 		devServer: {
 			historyApiFallback: true,

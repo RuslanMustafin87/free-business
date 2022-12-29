@@ -1,16 +1,14 @@
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
-import FaviconsWebpackPlugin from "favicons-webpack-plugin";
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 const PATHS = {
 	source: resolve(__dirname, "..", "src"),
 	build: resolve(__dirname, "..", "dist"),
 };
 
-export default {
+module.exports = {
 	entry: {
 		index: PATHS.source + "/index.js",
 	},
@@ -21,9 +19,9 @@ export default {
 				exclude: /(node_modules|dist)/,
 				use: {
 					loader: "babel-loader",
-					options: {
-						plugins: [["import", { libraryName: "bootstrap", style: true }]],
-					},
+					// options: {
+					// 	plugins: [["import", { libraryName: "bootstrap", style: true }]],
+					// },
 				},
 			},
 			{
@@ -42,7 +40,7 @@ export default {
 				test: /\.svg$/,
 				type: "asset",
 				generator: { filename: "images/icons/[name].[contenthash:8][ext]" },
-				parser: { dataUrlCondition: { maxSize: 2 * 1024 }},
+				parser: { dataUrlCondition: { maxSize: 2 * 1024 } },
 				use: [{ loader: "svgo-loader", options: { plugins: [{ name: "cleanupIDs", active: false }] } }],
 			},
 			{
@@ -58,9 +56,8 @@ export default {
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: "index.html",
-			chunks: ["index", "common"],
 			template: `${PATHS.source}/index.pug`,
-			title: "Local business"
+			title: "Local business",
 		}),
 		new FriendlyErrorsWebpackPlugin(),
 		new FaviconsWebpackPlugin({
