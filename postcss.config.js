@@ -1,8 +1,7 @@
 const purgecss = require("@fullhuman/postcss-purgecss");
 const postcssPresetEnv = require("postcss-preset-env");
 
-module.exports = function (mode) {
-	// syntax: 'postcss-scss',
+module.exports = function ({ mode }) {
 	if (mode === "development") {
 		return {
 			plugins: ["mqpacker", postcssPresetEnv()],

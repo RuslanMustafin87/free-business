@@ -5,19 +5,20 @@ html(lang="en")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(name="description" content="Local business")
-		link(rel="icon", href="./assets/brand.svg", type="image/svg+xml")
-		link(rel="mask-icon", href="./assets/mask-brand.svg", type="image/svg+xml", color="1ca8dd")
+		link(rel="icon", href="assets/favicons/brand.svg", type="image/svg+xml")
+		link(rel="mask-icon", href="assets/favicons/mask-brand.svg", type="image/svg+xml", color="1ca8dd")
 		title= htmlWebpackPlugin.options.title
 	body
 		.wrapper
-			header.header.osition-relative
+			header.header.position-relative
 				.container-xl.d-flex.h-100
 					nav.navbar.navbar-expand-md.navbar-light.align-items-center.w-100
 						.container-xl.navbar-container.h-100
 							a.navbar-brand(href="")
-								img#brandIcon(src="./images/icons/brand.svg", alt="business-them")
+								img#brandIcon(src="assets/images/icons/brand.svg", alt="business-them")
 							button#buttonOpenNav.navbar-toggler.ms-auto(
 								type="button",
+								data-bs-toggle="collapse",
 								data-bs-target="#navbarContent",
 								aria-controls="navbarContent",
 								aria-expanded="false",
@@ -53,7 +54,7 @@ html(lang="en")
 						.feedback__item.col
 							.input-group
 								label.feedback__icon.input-group-text
-									img#personIcon(src="./images/icons/person.svg", alt="icon person")
+									img#personIcon(src="assets/images/icons/person.svg", alt="icon person")
 								input#inputFeedbackName.feedback__input.form-control(
 									type="text",
 									name="name",
@@ -62,12 +63,12 @@ html(lang="en")
 						.feedback__item.col
 							.input-group
 								label.feedback__icon.input-group-text
-									img#mailIcon(src="./images/icons/mail.svg", alt="icon mail")
+									img#mailIcon(src="assets/images/icons/mail.svg", alt="icon mail")
 								input.feedback__input.form-control(type="email", name="email", placeholder="Email Address")
 						.feedback__item.col
 							.input-group
 								label.feedback__icon.input-group-text
-									img#phoneIcon(src="./images/icons/phone.svg", alt="icon phone")
+									img#phoneIcon(src="assets/images/icons/phone.svg", alt="icon phone")
 								input.feedback__input.form-control(type="tel", name="phone", placeholder="Phone")
 						.feedback__item.col.text-center.text-md-start
 							button.feedback__submit.form-button.btn(type="submit") Request a quote
@@ -93,11 +94,11 @@ html(lang="en")
 								aria-label="Slide 3")
 						.carousel-inner
 							.carousel-item.active
-								img#laptopImg0.d-block.img-fluid.w-100(src="./images/laptop.webp", alt="laptop")
+								img#laptopImg0.d-block.img-fluid.w-100(src="assets/images/laptop.webp", alt="laptop")
 							.carousel-item
-								img#laptopImg1.d-block.img-fluid.w-100(src="./images/laptop1.webp", alt="laptop")
+								img#laptopImg1.d-block.img-fluid.w-100(src="assets/images/laptop1.webp", alt="laptop")
 							.carousel-item
-								img#laptopImg2.d-block.img-fluid.w-100(src="./images/laptop2.webp", alt="laptop")
+								img#laptopImg2.d-block.img-fluid.w-100(src="assets/images/laptop2.webp", alt="laptop")
 			section#service.service
 				.container-lg
 					h2.service__title Our service
@@ -106,21 +107,21 @@ html(lang="en")
 					ul.service__list.row.row-cols-1.row-cols-lg-2
 						.service__item.col
 							.service__content
-								img#scheduleIcon.service__icon(src="./images/icons/schedule.svg", alt="schedule")
+								img#scheduleIcon.service__icon(src="assets/images/icons/schedule.svg", alt="schedule")
 								//- span.service__icon.material-icons.text-cl-button schedule
 								h2.service__content-title Material Icons
 								p.service__content-text.
 									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
 						.service__item.col
 							.service__content
-								img#settingsIcon.service__icon(src="./images/icons/settings.svg", alt="settings")
+								img#settingsIcon.service__icon(src="assets/images/icons/settings.svg", alt="settings")
 								//- span.service__icon.material-icons settings
 								h2.service__content-title Material Icons
 								p.service__content-text.
 									Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy
 						.service__item.col
 							.service__content
-								img#schoolIcon.service__icon(src="./images/icons/school.svg", alt="school")
+								img#schoolIcon.service__icon(src="assets/images/icons/school.svg", alt="school")
 								//- span.service__icon.material-icons school
 								h2.service__content-title Material Icons
 								p.service__content-text.
@@ -128,7 +129,7 @@ html(lang="en")
 									cover many web sites still in their infancy
 						.service__item.col
 							.service__content
-								img#rocketLaunchIcon.service__icon(src="./images/icons/rocket_launch.svg", alt="rocket launch")
+								img#rocketLaunchIcon.service__icon(src="assets/images/icons/rocket_launch.svg", alt="rocket launch")
 								//- span.service__icon.material-icons rocket_launch
 								h2.service__content-title Material Icons
 								p.service__content-text.
@@ -137,7 +138,7 @@ html(lang="en")
 						.service__item.col
 							.service__content
 								img#sentimentSatisfiedIcon.service__icon(
-									src="./images/icons/sentiment_satisfied.svg",
+									src="assets/images/icons/sentiment_satisfied.svg",
 									alt="sentiment satisfied")
 								//- span.service__icon.material-icons sentiment_satisfied
 								h2.service__content-title Material Icons
@@ -145,7 +146,7 @@ html(lang="en")
 									Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham
 						.service__item.col
 							.service__content
-								img#attachMoneyIcon.service__icon(src="./images/icons/attach_money.svg", alt="attach money")
+								img#attachMoneyIcon.service__icon(src="assets/images/icons/attach_money.svg", alt="attach money")
 								//- span.service__icon.material-icons attach_money
 								h2.service__content-title Material Icons
 								p.service__content-text.
@@ -211,19 +212,19 @@ html(lang="en")
 				.arrow-container.container-lg.position-relative
 					.steps__container.row.row-cols-1.row-cols-md-4
 						.steps__card.card.col
-							img#headphonesIcon.steps__icon(src="./images/icons/headphones.svg", alt="headphones")
+							img#headphonesIcon.steps__icon(src="assets/images/icons/headphones.svg", alt="headphones")
 							h3.steps__card-title.card-title step 1
 							p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
 						.steps__card.card.col
-							img#unlockIcon.steps__icon(src="./images/icons/unlock.svg", alt="lock open")
+							img#unlockIcon.steps__icon(src="assets/images/icons/unlock.svg", alt="lock open")
 							h3.steps__card-title.card-title step 2
 							p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
 						.steps__card.card.col
-							img#backupIcon.steps__icon(src="./images/icons/backup.svg", alt="backup")
+							img#backupIcon.steps__icon(src="assets/images/icons/backup.svg", alt="backup")
 							h3.steps__card-title.card-title step 3
 							p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
 						.steps__card.card.col
-							img#thumbIcon.steps__icon(src="./images/icons/thumb.svg", alt="thumb")
+							img#thumbIcon.steps__icon(src="assets/images/icons/thumb.svg", alt="thumb")
 							h3.steps__card-title.card-title step 4
 							p.steps__card-text.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
 					.con1
@@ -247,7 +248,7 @@ html(lang="en")
 						.col
 							.card.row.g-0.clients__card
 								.col-4
-									img#client1.clients__image(src="./images/Layer26.webp", alt="clients1")
+									img#client1.clients__image(src="assets/images/Layer26.webp", alt="clients1")
 								.col-8.card-body
 									blockquote.clients__quote.
 										Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -260,7 +261,7 @@ html(lang="en")
 						.col
 							.card.row.g-0.clients__card
 								.col-4
-									img#client2.clients__image(src="./images/Layer22.png", alt="clients2")
+									img#client2.clients__image(src="assets/images/Layer22.png", alt="clients2")
 								.col-8.card-body
 									blockquote.clients__quote.
 										Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -273,7 +274,7 @@ html(lang="en")
 						.col
 							.card.row.g-0.clients__card
 								.col-4
-									img#client3.clients__image(src="./images/Layer25.png", alt="clients3")
+									img#client3.clients__image(src="assets/images/Layer25.png", alt="clients3")
 								.col-8.card-body
 									blockquote.clients__quote.
 										Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -286,7 +287,7 @@ html(lang="en")
 						.col
 							.card.row.g-0.clients__card
 								.col-4
-									img#client4.clients__image(src="./images/Layer23.png", alt="clients4")
+									img#client4.clients__image(src="assets/images/Layer23.png", alt="clients4")
 								.col-8.card-body
 									blockquote.clients__quote.
 										Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -304,12 +305,12 @@ html(lang="en")
 						.map__item.col-12.col-md
 							.input-group
 								label.map__icon.input-group-text
-									img#personIconMap(src="./images/icons/person.svg", alt="icon person")
+									img#personIconMap(src="assets/images/icons/person.svg", alt="icon person")
 								input.map__input.form-control(type="text", name="name", placeholder="Full Name")
 						.map__item.col-12.col-md
 							.input-group
 								label.map__icon.input-group-text
-									img#mailIconMap(src="./images/icons/mail.svg", alt="icon pemail")
+									img#mailIconMap(src="assets/images/icons/mail.svg", alt="icon pemail")
 								input.map__input.form-control(type="email", name="email", placeholder="Email Address")
 						.map__item.col-12.col-md-auto.text-center.text-md-start
 							button.map__submit.form-button.btn(type="submit") Request a quote
@@ -335,21 +336,21 @@ html(lang="en")
 						a.footer__link.nav-link(href="#clients", role="button") Happy clients
 						a.footer__link.nav-link(href="#map", role="button") Contacts us
 					address.footer__phone
-						img#phoneIconFooter(src="./images/icons/phone.svg", alt="icon phone")
+						img#phoneIconFooter(src="assets/images/icons/phone.svg", alt="icon phone")
 						span +987 9976 999
 					ul.footer__social.list-group.list-group-horizontal
 						li.list-group-item.border-0
 							a.footer__link-social(class="", href="#")
-								img#twitterIcon.footer__icon-social(src="./images/icons/twitter.svg", alt="twitter")
+								img#twitterIcon.footer__icon-social(src="assets/images/icons/twitter.svg", alt="twitter")
 						li.list-group-item.border-0
 							a.footer__link-social(class="", href="#")
-								img#facebookIcon.footer__icon-social(src="./images/icons/facebook.svg", alt="facebook")
+								img#facebookIcon.footer__icon-social(src="assets/images/icons/facebook.svg", alt="facebook")
 						li.list-group-item.border-0
 							a.footer__link-social(class="", href="#")
-								img#googleIcon.footer__icon-social(src="./images/icons/google+.svg", alt="google")
+								img#googleIcon.footer__icon-social(src="assets/images/icons/google+.svg", alt="google")
 						li.list-group-item.border-0
 							a.footer__link-social(class="", href="#")
-								img#inIcon.footer__icon-social(src="./images/icons/in.svg", alt="linkedin")
+								img#inIcon.footer__icon-social(src="assets/images/icons/in.svg", alt="linkedin")
 				.footer__copyright
 					p.footer__copyright-text All contents © copyright 2014 Business Theme. All rights reserved Designed by : akhilwebfolio
 				.jjj

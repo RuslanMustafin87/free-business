@@ -12,18 +12,7 @@ module.exports = merge([
 				{
 					test: /\.s?css$/,
 					exclude: /node_modules/,
-					use: [
-						"style-loader",
-						"css-loader",
-						// {
-						// 	loader: "postcss-loader",
-						// 	options: {
-						// 		postcssOptions: postcssConfig("development"),
-						// 	},
-						// },
-						"postcss-loader",
-						"sass-loader",
-					],
+					use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
 				},
 			],
 		},
@@ -31,7 +20,7 @@ module.exports = merge([
 		devServer: {
 			historyApiFallback: true,
 			compress: true,
-			port: 3010,
+			port: 3011,
 			watchFiles: {
 				paths: ["src/**/*.*"],
 				options: {

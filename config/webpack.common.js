@@ -10,7 +10,7 @@ const PATHS = {
 
 module.exports = {
 	entry: {
-		index: PATHS.source + "/index.js",
+		index: `${PATHS.source}/index.js`,
 	},
 	module: {
 		rules: [
@@ -19,9 +19,9 @@ module.exports = {
 				exclude: /(node_modules|dist)/,
 				use: {
 					loader: "babel-loader",
-					// options: {
-					// 	plugins: [["import", { libraryName: "bootstrap", style: true }]],
-					// },
+					options: {
+						plugins: [["import", { libraryName: "bootstrap", style: true }]],
+					},
 				},
 			},
 			{
@@ -34,21 +34,20 @@ module.exports = {
 			{
 				test: /\.(jpe?g|png|webp)$/,
 				type: "asset/resource",
-				generator: { filename: "images/[name].[contenthash:8][ext]" },
+				generator: { filename: "assets/images/[name].[contenthash:8][ext]" },
 			},
 			{
 				test: /\.svg$/,
 				type: "asset",
-				generator: { filename: "images/icons/[name].[contenthash:8][ext]" },
+				generator: { filename: "assets/images/icons/[name].[contenthash:8][ext]" },
 				parser: { dataUrlCondition: { maxSize: 2 * 1024 } },
 				use: [{ loader: "svgo-loader", options: { plugins: [{ name: "cleanupIDs", active: false }] } }],
 			},
 			{
-				// TODO копрессия шрифтов
 				test: /\.woff2|woff|ttf$/,
 				type: "asset/resource",
 				generator: {
-					filename: "fonts/[name].[contenthash:8][ext]",
+					filename: "assets/fonts/[name].[contenthash:8][ext]",
 				},
 			},
 		],
@@ -61,10 +60,10 @@ module.exports = {
 		}),
 		new FriendlyErrorsWebpackPlugin(),
 		new FaviconsWebpackPlugin({
-			logo: PATHS.source + "/images/icons/brand.svg",
-			// publicPath: '',
-			// outputPath: '/assets/favicons/',
-			prefix: "/assets/favicons/",
+			logo: `${PATHS.source}/images/icons/brand.svg`,
+			publicPath: "assets/favicons/",
+			outputPath: "assets/favicons/",
+			prefix: "",
 			favicons: {
 				appName: "Local business",
 				start_url: "/",

@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
 import "./scss/index.scss";
-// import "./vendors/bootstrap/carousel.mjs";
+// import { Carousel } from "bootstrap";
 import "../node_modules/bootstrap/js/dist/carousel";
+// import "../node_modules/bootstrap/js/dist/";
 
 import brandPath from "./images/icons/brand.svg";
 import personPath from "./images/icons/person.svg";

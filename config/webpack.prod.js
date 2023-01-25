@@ -5,8 +5,8 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { merge } = require("webpack-merge");
 const CopyPlugin = require("copy-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
-const common = require("./webpack.common.js");
 const zlib = require("zlib");
+const common = require("./webpack.common.js");
 
 const PATHS = {
 	source: resolve(__dirname, "..", "src"),
@@ -19,10 +19,8 @@ module.exports = merge([
 		mode: "production",
 		output: {
 			path: PATHS.build,
-			filename: "js/[name].[contenthash:8].js",
+			filename: "assets/js/[name].[contenthash:8].js",
 			clean: true,
-			// publicPath: "assets/",
-			assetModuleFilename: "assets/",
 		},
 		optimization: {
 			minimize: true,
@@ -58,7 +56,7 @@ module.exports = merge([
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: "css/[name].[contenthash].css",
+				filename: "assets/css/[name].[contenthash:8].css",
 			}),
 			new CompressionPlugin({
 				filename: "[path][base].br",
@@ -77,7 +75,7 @@ module.exports = merge([
 				patterns: [
 					{
 						from: `${PATHS.source}/images/favicons`,
-						to: `${PATHS.build}/assets`,
+						to: `${PATHS.build}/assets/favicons`,
 					},
 				],
 			}),
