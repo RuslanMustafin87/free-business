@@ -1,4 +1,5 @@
 const { resolve } = require("path");
+const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -79,6 +80,7 @@ module.exports = merge([
 					},
 				],
 			}),
+			new webpack.ProgressPlugin(),
 		],
 	},
 ]);
