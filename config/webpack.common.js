@@ -1,6 +1,6 @@
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+// const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 const PATHS = {
@@ -58,7 +58,7 @@ module.exports = {
 			template: `${PATHS.source}/index.pug`,
 			title: "Local business",
 		}),
-		new FriendlyErrorsWebpackPlugin(),
+		// new FriendlyErrorsWebpackPlugin(),
 		new FaviconsWebpackPlugin({
 			logo: `${PATHS.source}/images/icons/brand.svg`,
 			publicPath: "assets/favicons/",

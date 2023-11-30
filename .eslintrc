@@ -19,6 +19,7 @@
 		"prefer-destructuring": "warn",
 		"prefer-object-spread": "warn",
 		"operator-assignment": "error",
-		"no-var": "error"
+		"no-var": "error",
+		"prettier/prettier": ["error", { "endOfLine": "auto" }]
 	}
 }
